@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-starter-help-center",
-  "description": "A starter for a help center powered by Gatsby and Markdown",
-  "version": "0.1.1",
-  "author": "Dominik Ferber <dominik.ferber+npm@gmail.com>",
+  "name": "whoisrunning.org",
+  "description": "A site to help you vote local.",
+  "version": "0.1",
+  "author": "Riley Seaman <riley@rileyseaman.com>",
   "bugs": {
-    "url": "https://github.com/dferber90/gatsby-starter-help-center/issues"
+    "url": "https://github.com/rseaman/whoisrunning.org/issues"
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
@@ -29,6 +29,7 @@
     "gatsby-remark-responsive-iframe": "^2.2.32",
     "gatsby-remark-smartypants": "^2.1.21",
     "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-csv": "^2.10.0",
     "gatsby-transformer-remark": "^2.6.51",
     "gatsby-transformer-sharp": "^2.3.14",
     "gatsby-transformer-yaml": "2.4.10",
@@ -48,7 +49,7 @@
   "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "homepage": "https://github.com/dferber90/gatsby-starter-help-center#readme",
+  "homepage": "https://whoisrunning.org",
   "keywords": [
     "gatsby"
   ],
@@ -56,7 +57,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dferber90/gatsby-starter-help-center.git"
+    "url": "git+https://github.com/rseaman/whoisrunning.org.git"
   },
   "scripts": {
     "build": "gatsby build",
