@@ -4,9 +4,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import slug from "slug"
 import Image from "gatsby-image"
+import rehypeReact from "rehype-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Gsheet from "../components/gsheet"
 import { rhythm } from "../utils/typography"
 
 class ArticleTemplate extends React.Component {
@@ -15,6 +17,10 @@ class ArticleTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const collection = article.fields.collection
     const section = article.fields.section
+    const renderAst = new rehypeReact({
+      createElement: React.createElement,
+      components: { "gsheet": Gsheet },
+    }).Compiler
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -204,8 +210,9 @@ class ArticleTemplate extends React.Component {
           <hr sx={{ background: "hsla(0,0%,0%,0.05)" }} />
           <section
             sx={{ pb: 4 }}
-            dangerouslySetInnerHTML={{ __html: article.html }}
+            // dangerouslySetInnerHTML={{ __html: article.html }}
           />
+          {renderAst(article.htmlAst)}
         </article>
       </Layout>
     )
@@ -232,6 +239,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      htmlAst
       fields {
         section {
           id
